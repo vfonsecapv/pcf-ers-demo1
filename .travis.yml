@@ -7,7 +7,7 @@ deploy:
   provider: cloudfoundry
   api: https://api.run.pez.pivotal.io
   username: victortales@gmail.com
-  password: Paralelos21;
+  password: portaria26;
   organization: pivot-vfonseca
   space: development
   on:
