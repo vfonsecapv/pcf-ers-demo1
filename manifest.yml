@@ -1,11 +1,10 @@
 ---
 applications:
-- name: attendees
+- name: attendees-${random-word}
   memory: 512MB
   instances: 1
   path: target/pcf-ers-demo1-0.0.1-SNAPSHOT.jar
   buildpack: java_buildpack_offline
   services: []
-  random-route: true
   env:
     SPRING_PROFILES_ACTIVE: cloud
