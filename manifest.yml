@@ -1,6 +1,6 @@
 ---
 applications:
-- name: attendees
+- name: attendees-${random-word}
   random-route: true
   memory: 512MB
   instances: 1
