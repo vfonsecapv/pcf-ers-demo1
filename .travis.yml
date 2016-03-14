@@ -7,7 +7,8 @@ deploy:
   provider: cloudfoundry
   api: https://api.run.pez.pivotal.io
   username: victortales@gmail.com
-  password: portaria26;
+  password:
+    secure: CqBvarFHj/HOehebHeyeyO/FZCwDSKf3kJyjKlTtHVMrrmv6wRSjd/X8SaoWVT470xktLEjfpW38qqUiMsJ1YzDkQlcSudYdxDsM8/VYanRLzaAoyOElOKx7lz+DaSlRLQkM5iN12SAUK6ZMd43DbLfXTW1Jn0Wgpv5StK4Ca+gqad7eAk69VNvFAr5Lnn0U7VMj+z2TtMHVO2JtO1bEwqLE9YHeuqncuf98jWsQ0EoNTYxPYCzzDJhHJ45mGyM1PeWEuceAMfV64jBL7Z823SKT8ZGtldp2HCADHeIhnvkJCeE2lAaaV6Wp+c5EgCAOogdX9aVp0Z4384HGQKeLB0amWalQG5DZEQ+0LnQr7MFmpyF5CDDDgHqNarzGnWSp85mn523SHNyEiRyY9bqDzfO1LNVLn8nIYl21JVaMOX7Dnulysl/Ev1MqiobBsqiD0xXaGmnRN4OeOlYBylLZAsehhqM43UkDf68gmPJlt6iV+abn2YdpU6n+JdJZGjmQ5FTEx8d/Ml4h5F5jNVN4C4vq1ksIgJuqBa+fhIIbblya8iCR92TWBqdbWFMILDBkSuUgyA7/iiJ/hIaFxjqGK/RLfgGcuNUsHmV5szxZVQU2QAKABVlXLT1SOQTPc6GF1TYNZonEZJIpWuUXtPethY3x7Ym7cE7ljScNH2bIo5E=
   organization: pivot-vfonseca
   space: development
   on:
