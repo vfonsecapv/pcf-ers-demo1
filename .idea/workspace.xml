@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/manifest.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.096359745">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -579,7 +579,7 @@
       <option name="number" value="Default" />
       <updated>1457985392322</updated>
       <workItem from="1457985393455" duration="3412000" />
-      <workItem from="1457989492330" duration="3382000" />
+      <workItem from="1457989492330" duration="3678000" />
     </task>
     <task id="LOCAL-00001" summary="Mudar título da página inicial.">
       <created>1457985432152</created>
@@ -737,11 +737,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457993378898</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Mudar título da página inicial.">
+      <created>1457993519392</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1457993519392</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6794000" />
+    <option name="totallyTimeSpent" value="7090000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="609" width="1920" height="587" extended-state="0" />
@@ -834,7 +840,7 @@
     <entry file="file://$PROJECT_DIR$/manifest.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.096359745">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
