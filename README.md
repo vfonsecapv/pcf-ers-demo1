@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/mborges-pivotal/pcf-ers-demo1.svg?branch=master)](https://travis-ci.org/mborges-pivotal/pcf-ers-demo1)
-[ ![Download](https://api.bintray.com/packages/mborges-pivotal/generic/pcf-ers-demo1/images/download.svg) ](https://bintray.com/mborges-pivotal/generic/pcf-ers-demo1/_latestVersion)
+[![Build Status](https://travis-ci.org/vfonsecapv/pcf-ers-demo1.svg?branch=master)](https://travis-ci.org/vfonsecapv/pcf-ers-demo1)
+[ ![Download](https://api.bintray.com/packages/vfonsecapv/generic/pcf-ers-demo1/images/download.svg) ](https://bintray.com/vfonsecapv/generic/pcf-ers-demo1/_latestVersion)
 
 # PCF Elastic Runtime Service (ERS) Base Demo
 Base application to demonstrate PCF ERS
