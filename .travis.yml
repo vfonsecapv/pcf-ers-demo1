@@ -7,8 +7,7 @@ deploy:
   provider: cloudfoundry
   api: https://api.run.pez.pivotal.io
   username: victortales@gmail.com
-  password:
-    secure: ivUer+6Fwi5BGURF/5bH3oTevJaGKujX9xjsF5xz9KWc3S7YqgBcR6/f2kjjXMNC/OZiVv/pjLwn4Eg/l0ytM/uXox+uzyFUBM9ytIEoPbJAnxwdE8z9WucpVl+ie5qCia4nhnBqzo1Ye5wcrbqlDnaww9dlLFNoPCNFse3vGAuCVpFys4bthra+prDQ0Ws56jgLE+b7BBVueF5f0J/nji4A4muXRJiTOftUdVZXxjZUWKsL9WxwwLDC2XpmuuZgTD3Ct2gduu4I31BRBCYaXWTsrmOH3B0kIu6ZOwAGrj2y4my5sUxuyOMOW/AbrmknjVgqUrT1NJegW1UibkTerTN74urJkSBuAN+uG48W6LPH9JRYCBXKXwP3Tfx1+DrLPSdHBeKgZnutbtNF6t53mGM6LAHQV7RVG/0tfjjmetTJPJvTi+ShLAkLMazj01SkucwTOV4wG2pEi8ivrnvShz+Bp3dOI5EIxC7i/DK8D1zC/OhMiWx+MTSZnMaq/nJPcX+TBsefamsvvQVAZGd4nYszmGJvnN2cjL92m7vA+rRq9QI2+Pxj3YWWc83JE7EQR8hlVUqnNAeQ+t42RVLHeDga03j5ojkV9Ba+1zzOzbqF7Nlu6OHzJgt+1bJDl6faNqANKfl1HCXM0fw+JbqB2WDOOvTLN37tsLtxCxxaIHo=
+  password: Paralelos21;
   organization: pivot-vfonseca
   space: development
   on:
