@@ -4,6 +4,7 @@ jdk:
 script: env && ./mvnw package -B
 before_deploy: "./ci/travis_beforeDeploy.sh"
 deploy:
+  edge: true
   provider: cloudfoundry
   api: https://api.run.pez.pivotal.io
   username: victortales@gmail.com
