@@ -28,6 +28,4 @@ public class Attendee {
 	private String zipCode;
 	private String phoneNumber;
 	private String emailAddress;
-		
-
 }

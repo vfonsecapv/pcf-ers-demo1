@@ -8,3 +8,4 @@ build/
 .springBeans
 .travis.yml
 .idea
+/docs
