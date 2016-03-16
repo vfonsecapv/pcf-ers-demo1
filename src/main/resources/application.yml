@@ -1,3 +1,16 @@
 spring:
   application:
     name: attendees
+
+---
+
+spring:
+  profiles: dev
+
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
