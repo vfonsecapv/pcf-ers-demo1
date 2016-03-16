@@ -99,7 +99,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-jdbc:8.0.26" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:8.0.26" level="project" />
-    <orderEntry type="library" name="Maven: io.pivotal.spring.cloud:spring-cloud-services-starter-parent:1.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry:1.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-eureka:1.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:1.0.4.RELEASE" level="project" />

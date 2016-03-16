@@ -99,11 +99,6 @@
         <!-- SpringCloud -->
         <dependency>
             <groupId>io.pivotal.spring.cloud</groupId>
-            <artifactId>spring-cloud-services-starter-parent</artifactId>
-            <version>1.0.2.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>io.pivotal.spring.cloud</groupId>
             <artifactId>spring-cloud-services-starter-service-registry</artifactId>
         </dependency>
         <dependency>
