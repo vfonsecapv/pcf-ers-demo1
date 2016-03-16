@@ -1,0 +1,2 @@
+applications:
+  services: [ config-server, discovery-service, circuit-breaker-dashboard]
