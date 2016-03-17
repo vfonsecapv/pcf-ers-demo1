@@ -5,7 +5,7 @@ spring:
 ---
 
 spring:
-  profiles: cloud
+  profiles: dev
 
 security:
   basic:
