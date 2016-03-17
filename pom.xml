@@ -96,7 +96,7 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- SpringCloud -->
+        <!-- SpringCloud
         <dependency>
             <groupId>io.pivotal.spring.cloud</groupId>
             <artifactId>spring-cloud-services-starter-service-registry</artifactId>
@@ -108,7 +108,7 @@
         <dependency>
             <groupId>io.pivotal.spring.cloud</groupId>
             <artifactId>spring-cloud-services-starter-circuit-breaker</artifactId>
-        </dependency>
+        </dependency-->
     </dependencies>
 
     <dependencyManagement>
