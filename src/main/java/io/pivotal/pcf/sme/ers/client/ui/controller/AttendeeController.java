@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,12 +27,16 @@ import io.pivotal.pcf.sme.ers.client.model.Attendee;
  *
  */
 @Controller
+@RefreshScope
 public class AttendeeController {
 
 	private Log log = LogFactory.getLog(AttendeeController.class);
 
 	@Autowired
 	private AttendeeService attendeeService;
+
+	@Value("${infoMessage}")
+	private String infoMessage;
 
 	/**
 	 * INDEX
@@ -41,7 +47,10 @@ public class AttendeeController {
 	 */
 	@RequestMapping("/")
 	public String index(Model model) throws Exception {
+		model.addAttribute("infoMessage", infoMessage);
+
 		addAppEnv(model);
+
 		return "index";
 	}
 
