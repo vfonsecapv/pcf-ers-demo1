@@ -64,9 +64,9 @@ The application tries to be self-descriptive. You'll see when you access the app
 :user_id: 6598619
 :user_initials: VF
 ```
-Use jenkins_jobs.zip for jobs config example
+**Use jenkins_jobs.zip for jobs config example**
 
-Jenkins shell (Build, Pivotal Cloud Foundry push/bind/deploy and Pivotal Tracker task change)
+**Jenkins shell (Build, Pivotal Cloud Foundry push/bind/deploy and Pivotal Tracker task change)**
 ```
 cf login -a $CF_SYSTEM_DOMAIN -u $CF_USER -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE --skip-ssl-validation
 
