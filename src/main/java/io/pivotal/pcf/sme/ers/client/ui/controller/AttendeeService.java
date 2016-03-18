@@ -1,7 +1,5 @@
 package io.pivotal.pcf.sme.ers.client.ui.controller;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,7 +37,18 @@ public class AttendeeService {
 	
 	/// Polluting with server code
 	// http://blog.zenika.com/2012/06/15/hateoas-paging-with-spring-mvc-and-spring-data-jpa/
-	
+
+	@RequestMapping("/testeHystrix")
+	@ResponseBody
+	@HystrixCommand(fallbackMethod = "testeHystrixFallback")
+	public String testeHystrix() {
+		return "Sem erro";
+	}
+
+	public String testeHystrixFallback() {
+		return "Com erro!";
+	}
+
 	@Autowired
 	private AttendeeRepository attendeeRepository;
 	
@@ -51,7 +61,6 @@ public class AttendeeService {
 	}
 	
 	// returning server object
-	@HystrixCommand(fallbackMethod = "getAttendeesFallback")
 	Iterable<Attendee> getAttendees() {
 		return attendeeRepository.findAll();
 	}
@@ -59,12 +68,6 @@ public class AttendeeService {
 	// returning server object
 	Iterable<Attendee> searchName(String firstName) {
 		return attendeeRepository.findByFirstNameContainsIgnoreCase(firstName, new PageRequest(0,100));
-	}
-
-	Iterable<Attendee> getAttendeesFallback() {
-		Iterable<Attendee> attendees = new ArrayList<Attendee>();
-
-		return attendees;
 	}
 	
 
