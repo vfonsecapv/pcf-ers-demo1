@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,8 +42,12 @@ public class AttendeeService {
 	@RequestMapping("/testeHystrix")
 	@ResponseBody
 	@HystrixCommand(fallbackMethod = "testeHystrixFallback")
-	public String testeHystrix() {
-		return "Sem erro";
+	public String testeHystrix(@RequestParam(value ="erro") String erro) throws Exception {
+		if(erro != "") {
+			return "Sem erro";
+		} else {
+			throw new Exception();
+		}
 	}
 
 	public String testeHystrixFallback() {
