@@ -106,3 +106,14 @@ URL="$(cf app $APP_NAME | grep URLs| cut -c7-)"
 pt comment $TASK_NUMBER "Build and Deploy for Dev Space. Use this URL: $URL"
 pt finish $TASK_NUMBER
 ```
+##Plus Test Hystrix Monitor
+```
+while true; do curl https://dev-app-url/testHystrix?error=something; done
+```
+##Plus Test Config Server
+Update application.yml https://github.com/youraccount/pcf-ers-demo1-config
+Change infoMessage for any message
+```
+curl -X POST https://dev-app-url/refresh
+```
+
