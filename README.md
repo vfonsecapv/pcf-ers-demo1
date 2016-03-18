@@ -46,4 +46,62 @@ Take a look at the manifest file for the recommended setting. Adjust them as per
 ## Demo Scripts summary
 The application tries to be self-descriptive. You'll see when you access the application.
 
+### Jenkins/GIT/Pivotal Tracker Integration
 
+Install Jenkins (OSX)
+http://www.rubydoc.info/gems/pt/0.7.3
+
+Install Minimal client to use Pivotal Tracker from the console.
+http://www.rubydoc.info/gems/pt/0.7.3
+
+Create your own .pt file with Pivotal Tracker information
+.pt example
+
+---
+:project_id: 1557179
+:project_name: PCF Demo
+:user_name: Victor Fonseca
+:user_id: 6598619
+:user_initials: VF
+
+Use jenkins_jobs.zip for jobs config example
+
+Jenkins shell (Build, Pivotal Cloud Foundry push/bind/deploy and Pivotal Tracker task change)
+
+cf login -a $CF_SYSTEM_DOMAIN -u $CF_USER -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE --skip-ssl-validation
+
+DEPLOYED_VERSION_CMD=$(CF_COLOR=false cf apps | grep $CF_APP- | cut -d" " -f1)
+DEPLOYED_VERSION="$DEPLOYED_VERSION_CMD"
+ROUTE_VERSION=$(echo "${BUILD_NUMBER}" | cut -d"." -f1-3 | tr '.' '-')
+echo "Deployed Version: $DEPLOYED_VERSION"
+echo "Route Version: $ROUTE_VERSION"
+
+# push a new version and map the route
+cf push "$CF_APP-$BUILD_NUMBER" -n "$CF_APP-$ROUTE_VERSION" -i 2 -p $CF_JAR --no-start
+cf bind-service "$CF_APP-$BUILD_NUMBER" config-server
+cf bind-service "$CF_APP-$BUILD_NUMBER" discovery-service
+cf bind-service "$CF_APP-$BUILD_NUMBER" circuit-breaker-dashboard
+cf bind-service "$CF_APP-$BUILD_NUMBER" mysql
+
+cf map-route "$CF_APP-${BUILD_NUMBER}" $CF_APPS_DOMAIN -n $CF_APP
+cf start "$CF_APP-$BUILD_NUMBER"
+
+if [ ! -z "$DEPLOYED_VERSION" -a "$DEPLOYED_VERSION" != " " -a "$DEPLOYED_VERSION" != "$CF_APP-${BUILD_NUMBER}" ]; then
+  echo "Performing zero-downtime cutover to $BUILD_NUMBER"
+  echo "$DEPLOYED_VERSION" | while read line
+  do
+    if [ ! -z "$line" -a "$line" != " " -a "$line" != "$CF_APP-${BUILD_NUMBER}" ]; then
+      echo "Scaling down, unmapping and removing $line"
+      # Unmap the route and delete
+      cf unmap-route "$line" $CF_APPS_DOMAIN -n $CF_APP
+    else
+      echo "Skipping $line"
+    fi
+  done
+fi
+
+APP_NAME="$CF_APP-$BUILD_NUMBER"
+URL="$(cf app $APP_NAME | grep URLs| cut -c7-)"
+
+pt comment $TASK_NUMBER "Build e Deploy no espaço de Desenvolvimento realizado com sucesso. Utilize a(s) URL para testes: $URL"
+pt finish $TASK_NUMBER
