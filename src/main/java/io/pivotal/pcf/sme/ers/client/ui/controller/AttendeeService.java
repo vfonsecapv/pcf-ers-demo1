@@ -50,7 +50,7 @@ public class AttendeeService {
 		}
 	}
 
-	public String testeHystrixFallback() {
+	public String testeHystrixFallback(@RequestParam(value ="erro") String erro) throws Exception  {
 		return "Com erro!";
 	}
 
