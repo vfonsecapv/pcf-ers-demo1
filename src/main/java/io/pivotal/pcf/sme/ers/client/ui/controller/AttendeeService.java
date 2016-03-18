@@ -39,19 +39,19 @@ public class AttendeeService {
 	/// Polluting with server code
 	// http://blog.zenika.com/2012/06/15/hateoas-paging-with-spring-mvc-and-spring-data-jpa/
 
-	@RequestMapping("/testeHystrix")
+	@RequestMapping("/testHystrix")
 	@ResponseBody
-	@HystrixCommand(fallbackMethod = "testeHystrixFallback")
-	public String testeHystrix(@RequestParam(value ="erro") String erro) throws Exception {
-		if(erro != "") {
-			return "Sem erro";
+	@HystrixCommand(fallbackMethod = "testHystrixFallback")
+	public String testHystrix(@RequestParam(value ="error") String error) throws Exception {
+		if(error != "") {
+			return "Without error";
 		} else {
 			throw new Exception();
 		}
 	}
 
-	public String testeHystrixFallback(@RequestParam(value ="erro") String erro) throws Exception  {
-		return "Com erro!";
+	public String testHystrixFallback(@RequestParam(value ="error") String error) throws Exception  {
+		return "With error!";
 	}
 
 	@Autowired
