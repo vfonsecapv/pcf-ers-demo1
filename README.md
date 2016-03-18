@@ -48,13 +48,13 @@ The application tries to be self-descriptive. You'll see when you access the app
 
 ### Jenkins/GIT/Pivotal Tracker Integration
 
-*** Install Jenkins (OSX). ***
+** Install Jenkins (OSX **
 - (http://www.rubydoc.info/gems/pt/0.7.3)
 
-*** Install Minimal client to use Pivotal Tracker from the console. ***
+** Install Minimal client to use Pivotal Tracker from the console. **
 - (http://www.rubydoc.info/gems/pt/0.7.3)
 
-*** Create your own .pt file with Pivotal Tracker information ***
+** Create your own .pt file with Pivotal Tracker information **
 - .pt example
 ```
 ---
