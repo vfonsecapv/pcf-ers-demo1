@@ -112,7 +112,6 @@ No-error
 while true; do curl https://dev-app-url/testHystrix?error=something; done
 ```
 Show error
-No-error
 ```
 while true; do curl https://dev-app-url/testHystrix?error=; done
 ```
