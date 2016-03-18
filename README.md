@@ -56,18 +56,18 @@ http://www.rubydoc.info/gems/pt/0.7.3
 
 Create your own .pt file with Pivotal Tracker information
 .pt example
-
+```
 ---
 :project_id: 1557179
 :project_name: PCF Demo
 :user_name: Victor Fonseca
 :user_id: 6598619
 :user_initials: VF
-
+```
 Use jenkins_jobs.zip for jobs config example
 
 Jenkins shell (Build, Pivotal Cloud Foundry push/bind/deploy and Pivotal Tracker task change)
-
+```
 cf login -a $CF_SYSTEM_DOMAIN -u $CF_USER -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE --skip-ssl-validation
 
 DEPLOYED_VERSION_CMD=$(CF_COLOR=false cf apps | grep $CF_APP- | cut -d" " -f1)
@@ -103,5 +103,6 @@ fi
 APP_NAME="$CF_APP-$BUILD_NUMBER"
 URL="$(cf app $APP_NAME | grep URLs| cut -c7-)"
 
-pt comment $TASK_NUMBER "Build e Deploy no espaço de Desenvolvimento realizado com sucesso. Utilize a(s) URL para testes: $URL"
+pt comment $TASK_NUMBER "Build and Deploy for Dev Space. Use this URL: $URL"
 pt finish $TASK_NUMBER
+```
