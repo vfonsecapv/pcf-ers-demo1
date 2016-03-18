@@ -1,8 +1,11 @@
 package io.pivotal.pcf.sme.ers.client.ui.controller;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +51,7 @@ public class AttendeeService {
 	}
 	
 	// returning server object
+	@HystrixCommand(fallbackMethod = "getAttendeesFallback")
 	Iterable<Attendee> getAttendees() {
 		return attendeeRepository.findAll();
 	}
@@ -55,6 +59,12 @@ public class AttendeeService {
 	// returning server object
 	Iterable<Attendee> searchName(String firstName) {
 		return attendeeRepository.findByFirstNameContainsIgnoreCase(firstName, new PageRequest(0,100));
+	}
+
+	Iterable<Attendee> getAttendeesFallback() {
+		Iterable<Attendee> attendees = new ArrayList<Attendee>();
+
+		return attendees;
 	}
 	
 
